@@ -6,10 +6,10 @@ rutaCerts=${rutaCerts%/}
 echo "Copiando los certificados originales a la ruta $rutaCopy"
 mkdir -p $rutaCopy
 su -c "cp /system/etc/security/cacerts/* $rutaCopy"
-su -c "rm /system/etc/security/cacerts/*"
 echo "Estableciendo partituración a escritura"
 su -c "mount -o remount,rw /system"
 echo "Copiando los certificados actualizados $rutaCerts a la ruta /system/etc/security/cacerts"
+su -c "rm /system/etc/security/cacerts/*"
 su -c "cp $rutaCerts/* /system/etc/security/cacerts/"
 echo "Estableciendo permisos..."
 su -c "chmod 644 /system/etc/security/cacerts/*"
