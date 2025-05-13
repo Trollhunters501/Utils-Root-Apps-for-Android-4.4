@@ -1,6 +1,6 @@
 echo "Escribe la ruta del archivo .ttf que contiene los emojis(recuerda renombrar el archivo a el nombre que corresponde con los emojis de tu Sistema (AndroidEmoji.ttf, NotoColorEmoji.ttf, SamsungColorEmoji.ttf, LGEmoji.ttf, HTC_ColorEmoji.ttf, SegoeUIEmoji.ttf, AppleColorEmoji.ttf, Etc.)):"
 read emojiPath
-emojiFile=$(echo "$emojiPath" | sed 's:.*/::')
+emojiFile=${emojiPath##*/}
 echo "Estableciendo partituración a escritura"
 su -c "mount -o remount,rw /system"
 echo "Copiando emojis a /system/fonts"
