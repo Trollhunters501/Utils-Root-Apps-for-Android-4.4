@@ -13,6 +13,5 @@ else
     su -c "cp $rutaBinario /data/local/tmp/"
     su -c "chmod 755 /data/local/tmp/$binarioName"
     su -c "restorecon /data/local/tmp/$binarioName"
-    alias "$binarioName=/data/local/tmp/$binarioName"
 fi
-echo "Binario instalado correctamente. Puedes usarlo con el comando $binarioName"
+echo "Binario instalado correctamente. Puedes usarlo con el comando /data/local/tmp/$binarioName"
